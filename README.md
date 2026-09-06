@@ -70,15 +70,6 @@ First- and second-year C++ work, kept for the record rather than presented as cu
 
 ---
 
-## 📈 Stats
-
-<p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=pablogzrs&show_icons=true&hide_border=true&theme=transparent&title_color=2563eb&icon_color=2563eb&text_color=808080" alt="GitHub stats">
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=pablogzrs&layout=compact&hide_border=true&theme=transparent&title_color=2563eb&text_color=808080" alt="Top languages">
-</p>
-
----
-
 <p align="center">
   <sub>Español · English · 中文 (HSK4, 学习中)</sub>
 </p>
