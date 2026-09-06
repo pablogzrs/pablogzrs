@@ -4,19 +4,12 @@
   <em>Data Science &amp; Mathematics Engineering @ Tecnológico de Monterrey · Guadalajara, México</em>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/focus-probabilistic%20modeling-2563eb?style=flat-square" alt="focus">
-  <img src="https://img.shields.io/badge/heading%20toward-quantitative%20risk-1e40af?style=flat-square" alt="heading toward">
-  <img src="https://img.shields.io/badge/currently-研究%20%2F%20research-64748b?style=flat-square" alt="currently">
-</p>
-
 ---
 
-I build models of systems that don't behave deterministically — surveys, clinical data, physical processes — and I care more about whether a model survives validation than whether it fits.
+I build models of systems that don't behave deterministically, and I care more about whether a model survives validation than whether it fits.
 
-Most of what's here follows one thread: **quantifying uncertainty and reasoning under it.** Bayesian networks, sampling-based inference, numerical integration, inverse measurement problems. The destination is quantitative risk management; these are the stops along the way.
 
-Every README below describes what the code actually does, including the defects I know about. If something is broken, it's written down.
+Every README below describes what the code actually does.
 
 ---
 
