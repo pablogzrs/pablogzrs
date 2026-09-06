@@ -12,36 +12,42 @@
 
 ---
 
-I build models of systems that don't behave deterministically — surveys, clinical data, physical processes, queues — and I care more about whether the model survives validation than whether it fits.
+I build models of systems that don't behave deterministically — surveys, clinical data, physical processes — and I care more about whether a model survives validation than whether it fits.
 
-Most of what's here follows one thread: **quantifying uncertainty and reasoning under it.** Bayesian networks, Monte Carlo, numerical integration, discrete-event simulation. The destination is quantitative risk management; these are the stops along the way.
+Most of what's here follows one thread: **quantifying uncertainty and reasoning under it.** Bayesian networks, sampling-based inference, numerical integration, inverse measurement problems. The destination is quantitative risk management; these are the stops along the way.
 
-Right now I'm working on gravitational-wave glitch classification with a CNN on Gravity Spy / LIGO data, and reading toward a co-authored paper in optimization.
+Every README below describes what the code actually does, including the defects I know about. If something is broken, it's written down.
 
 ---
+
+## 🔬 Current work
+
+Gravitational-wave glitch classification with a CNN on Gravity Spy / LIGO data, and a literature base toward a co-authored paper in optimization. Coursework this semester is stochastic optimization — Markov chains, exponential distributions.
 
 ## 🧠 Probabilistic modeling & inference
 
 | Project | What it does | Stack |
 |---|---|---|
-| **[transporte-en-mx-mbn](https://github.com/pablogzrs/transporte-en-mx-mbn)** | Multinomial Bayesian networks on Mexico's national mobility survey (ENMT–UNAM). Three competing structural specifications, BIC/AIC comparison, and validation by calibration + 500-replicate bootstrap. | `R` `bnlearn` `Quarto` |
-| **[ERC-gbn](https://github.com/pablogzrs/ERC-gbn)** | Gaussian Bayesian network over a chronic kidney disease dataset. | `R` |
-| **[premier-league-investment-analysis](https://github.com/pablogzrs/premier-league-investment-analysis)** | Does capital injection actually buy performance? Newcastle vs. Everton, 2017–2024. | `Python` `pandas` |
+| **[transporte-en-mx-mbn](https://github.com/pablogzrs/transporte-en-mx-mbn)** | Multinomial Bayesian networks on Mexico's national mobility survey (ENMT–UNAM). Three competing structural specifications compared by BIC/AIC, conditional queries by rejection sampling at 10⁶ replicates, and validation against observed frequencies plus a 500-replicate bootstrap. The model with the *worst* fit is the one kept for querying — its constraints were specified a priori, and the README explains why that matters. | `R` `bnlearn` `Quarto` |
+| **[ERC-gbn](https://github.com/pablogzrs/ERC-gbn)** | Gaussian Bayesian network over a chronic kidney disease dataset. Structure learning by hill climbing, candidate DAGs compared by Gaussian BIC/AIC. *In progress.* | `R` `Python` `bnlearn` |
+| **[premier-league-investment-analysis](https://github.com/pablogzrs/premier-league-investment-analysis)** | Does capital injection buy league performance? Newcastle vs. Everton across seven seasons, with correlation structure over squad value, net transfer spend, points and final standing. | `Python` `pandas` `seaborn` |
 
-## 🎲 Simulation & numerical methods
-
-| Project | What it does | Stack |
-|---|---|---|
-| **[popocatepetl-eruption-simulator](https://github.com/pablogzrs/popocatepetl-eruption-simulator)** | Ballistic trajectories of volcanic ejecta with drag, integrated by Euler's method. Monte Carlo over launch conditions, mapped against nearby towns. | `MATLAB` |
-| **[jfk-airport-simulator](https://github.com/pablogzrs/jfk-airport-simulator)** | Discrete-event airport traffic sim: FIFO airspace management, dynamic weather, probabilistic aircraft generation. | `C++` |
-| **[capacitance-simulator](https://github.com/pablogzrs/capacitance-simulator)** | Coupled-tank system dynamics with an interactive GUI, built for control-systems teaching. | `MATLAB` |
-| **[olympic-diving-simulator](https://github.com/pablogzrs/olympic-diving-simulator)** | Probabilistic scoring and medal determination across a field of athletes. | `C++` |
-
-## 🧱 Systems
+## 📐 Numerical & physical modeling
 
 | Project | What it does | Stack |
 |---|---|---|
-| **[media-catalog-system](https://github.com/pablogzrs/media-catalog-system)** | Polymorphic video catalog with dynamic memory management and file I/O. | `C++` |
+| **[popocatepetl-eruption-simulator](https://github.com/pablogzrs/popocatepetl-eruption-simulator)** | Ballistic trajectories of volcanic ejecta under drag, integrated by Euler's method, plotted against the real distances to Ecatzingo and Amecameca. | `MATLAB` |
+| **[capacitance-simulator](https://github.com/pablogzrs/capacitance-simulator)** | Capacitive liquid-level sensor. Inverts the parallel-plate capacitance equation to recover fill level from a measured capacitance, across six dielectrics — including a measured water response that lands a factor of ~4 below what the ideal model predicts. | `MATLAB` `App Designer` |
+
+## 🧱 Earlier coursework
+
+First- and second-year C++ work, kept for the record rather than presented as current.
+
+| Project | What it does | Stack |
+|---|---|---|
+| **[jfk-airport-simulator](https://github.com/pablogzrs/jfk-airport-simulator)** | Turn-based airport traffic toy: five-slot airspace with FIFO eviction, probabilistic arrivals, UFO easter eggs. | `C++` |
+| **[olympic-diving-simulator](https://github.com/pablogzrs/olympic-diving-simulator)** | Diving competition where the score distribution is conditioned on dive difficulty and the judge panel anchors to the first judge, so the scores are correlated by construction. | `C++` |
+| **[media-catalog-system](https://github.com/pablogzrs/media-catalog-system)** | Movie and episode catalog: abstract base class, field-count parser, rating averages. | `C++` |
 
 ---
 
@@ -60,7 +66,7 @@ Right now I'm working on gravitational-wave glitch classification with a CNN on 
   <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
 </p>
 
-**Methods:** Bayesian networks · Monte Carlo · linear &amp; stochastic optimization · Markov chains · numerical integration · statistical modeling · CNNs
+**Methods:** Bayesian networks · structure learning · Monte Carlo inference · bootstrap validation · numerical integration · linear &amp; stochastic optimization · Markov chains · CNNs
 
 ---
 
